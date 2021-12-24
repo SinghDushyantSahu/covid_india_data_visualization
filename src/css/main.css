@@ -1,0 +1,345 @@
+/*Variable*/
+:root {
+  --hPanel: 430px;
+  --wPanel: 350px;
+  --shadow: 0px 4px 16px rgb(141, 138, 138);
+  --colorSkyBlue: #41dad6;
+  --colorYellow: #f3ed3d;
+  --colorPink: #fc6b6b;
+}
+
+body {
+  max-height: fit-content;
+}
+
+/*Main*/
+@-ms-viewport {
+  width: device-width;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: #ffffff;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 11pt;
+  line-height: 1.5;
+  height: 100em;
+}
+
+/*taskbar*/
+
+#taskBar {
+  position: fixed;
+  background: linear-gradient(90deg, var(--colorSkyBlue) 0%,var(--colorYellow) 70%, var(--colorPink) 100%);
+  width: 100%;
+  height: 7em;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+
+/*Links*/
+
+.linkContainer {
+  position: relative;
+  max-width: fit-content;
+  margin-right: 3em;
+}
+
+.links img {
+  margin: 0.5em;
+  width: 2.2em;
+}
+
+/*heading*/
+
+#heading {
+  position: relative;
+  align-self: center;
+  margin-left: 2em;
+}
+
+#heading h1 {
+  font-weight: 600;
+  color: rgb(56, 53, 53);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/*mainBody*/
+
+.mainBody {
+  position: relative;
+  top: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+@media screen and (max-width: 800px) {
+  .mainBody {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.mainBody .components {
+  margin: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/*toggle btn*/
+
+.btn {
+  display: flex;
+  width: 150px;
+}
+
+.btn .btnMap {
+  width: inherit;
+  padding: 1em;
+  font-size: 10pt;
+  border: 0px solid black;
+  background-color: white;
+  border-top-left-radius: 1em;
+  box-shadow: var(--shadow);
+}
+
+.btn .btnName {
+  width: inherit;
+  padding: 1em;
+  font-size: 10pt;
+  border: 0px solid black;
+  background-color: white;
+  border-top-right-radius: 1em;
+  box-shadow: var(--shadow);
+}
+
+
+/*panel*/
+
+.panel {
+  background-color: white;
+  height: var(--hPanel);
+  width: var(--wPanel);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  border-radius: 1em;
+  border-top-left-radius: 0em;
+}
+
+/*search*/
+
+.searchContainer {
+  position: relative;
+}
+
+.searchPacker {
+  margin: 2em;
+}
+
+.searchContainer #search {
+  width: 250px;
+  height: 40px;
+  border: 0.1px solid black;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 0.5em;
+  font-size: 10pt;
+}
+
+.searchContainer #searchList {
+  max-width: 250px;
+  margin: 0.3em;
+  font-size: 10pt;
+  list-style-type: none;
+}
+
+.searchContainer #searchList * {
+  padding: 3px;
+  border-radius: 0.4em;
+  padding: 0.5em;
+  margin-bottom: 0.2em;
+  box-shadow: 0px 2px 4px rgb(141, 138, 138);
+  color: black;
+}
+
+/*map*/
+
+.map {
+  position: relative;
+  padding: 1em;
+  fill: var(--colorYellow);
+  stroke: black;
+  stroke-linecap: round;
+  stroke-width: 0.3px;
+  transition: fill 1s;
+}
+
+.map path {
+  fill: var(--colorYellow);
+}
+
+.map path:hover {
+  fill: var(--colorPink);
+}
+
+/*result*/
+
+#result {
+  position: relative;
+  padding: 20px;
+  height: var(--hPanel);
+  width: var(--wPanel);
+  box-shadow: var(--shadow);
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#result #myChart {
+  padding-bottom: 1em;
+}
+
+#result .headingAndCases{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#result .headingAndCases #resultHeading {
+  font-size: 12pt;
+  padding-left: 1em;
+}
+#result .headingAndCases #totalCases {
+  font-size: 12pt;
+  padding-right: 2em;
+  color: red;
+}
+
+/*Font adjustment*/
+@media screen and (max-width: 1280px) {
+  :root {
+    --hPanel: 390px;
+    --wPanel: 310px;
+  }
+  body {
+    font-size: 10pt;
+  }
+  .searchContainer #search {
+    width: 230px;
+    height: 33px;
+    font-size: 9.5pt;
+  }
+  .searchContainer #searchList {
+    font-size: 9.5pt;
+  }
+  .btn .btnName {
+    font-size: 9.5pt;
+  }
+  .btn .btnMap {
+    font-size: 9.5pt;
+  }
+  .btn {
+    width: 135px;
+  }
+  #result .headingAndCases #resultHeading {
+    font-size: 11pt;
+  }
+  #result .headingAndCases #totalCases {
+    font-size: 11pt;
+  }
+  .links img {
+    width: 2em;
+  }
+}
+@media screen and (max-width: 650px) {
+  :root {
+    --hPanel: 370px;
+    --wPanel: 300px;
+  }
+  body {
+    font-size: 8pt;
+  }
+  .searchContainer #search {
+    width: 220px;
+    height: 28px;
+    font-size: 7.5pt;
+  }
+  .searchContainer #searchList {
+    font-size: 7.5pt;
+  }
+  .btn .btnName {
+    font-size: 7.5pt;
+  }
+  .btn .btnMap {
+    font-size: 7.5pt;
+  }
+  .btn {
+    width: 120px;
+  }
+  #result .headingAndCases #resultHeading {
+    font-size: 9.5pt;
+  }
+  #result .headingAndCases #totalCases {
+    font-size: 9.5pt;
+  }
+  .links img {
+    width: 1.8em;
+  }
+}
+@media screen and (max-width: 376px) {
+  :root {
+    --hPanel: 330px;
+    --wPanel: 280px;
+  }
+  body {
+    font-size: 7pt;
+  }
+  .searchContainer #search {
+    width: 200px;
+    height: 27px;
+    font-size: 7pt;
+  }
+  .searchContainer #searchList {
+    font-size: 7pt;
+  }
+  .btn .btnName {
+    font-size: 7pt;
+  }
+  .btn .btnMap {
+    font-size: 7pt;
+  }
+  .btn {
+    width: 110px;
+  }
+  #result .headingAndCases #resultHeading {
+    font-size: 8.5pt;
+  }
+  #result .headingAndCases #totalCases {
+    font-size: 8.5pt;
+  }
+  .links img {
+    width: 1.6em;
+  }
+}
